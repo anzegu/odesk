@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>Slovenija</td>
-        <td>SLO</td>
+        <td>slo</td>
         <td>Uredi Izbriši</td>
     </tr>
     <?php
