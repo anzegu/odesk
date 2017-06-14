@@ -18,6 +18,7 @@
     Ime: <input type="text" name="ime99" /><br />
     <input type="submit" value="Pošlji" />
 </form>
+<br/>
         
 <?php 
     include 'footer.php';
