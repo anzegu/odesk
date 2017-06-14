@@ -61,7 +61,7 @@ include_once 'session.php';
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
                         <li><a href="skills.php"><span></span>Veščine</a></li>
-                        <li><a href="blog.html" class="current"><span></span>Blog</a></li>
+                        <li><a href="projects.php" class="current"><span></span>Projekti</a></li>
                         <?php
                         if (isset($_SESSION['user_id'])) {
                             ?>
