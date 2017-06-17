@@ -1,6 +1,6 @@
 <?php
-    $username = 'odesk';
-    $password = 'odesk';
+    $username = 'root';
+    $password = NULL;
     $database = 'odesk';
     $server = 'localhost';
     //povezava na podatkovno bazo

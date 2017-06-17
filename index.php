@@ -4,7 +4,7 @@
     
     if (isset($_SESSION['user_id'])) {
         //je prijavljen
-        echo $_SESSION['first_name'];
+        echo $_SESSION["email"];
     }
     else {
         echo 'Nisi prijavljen!';

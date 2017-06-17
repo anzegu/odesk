@@ -1,5 +1,6 @@
 <?php
 include_once 'session.php';
+include_once 'database.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -57,11 +58,20 @@ include_once 'session.php';
         <div id="tooplate_wrapper">
             <div id="tooplate_header_sp">
                 <div id="tooplate_menu">
-                    <ul>
+                    <ul>                        
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
                         <li><a href="skills.php"><span></span>Veščine</a></li>
-                        <li><a href="blog.html" class="current"><span></span>Blog</a></li>
+                        <li><a href="blog.html"><span></span>Blog</a></li>
+                        <li><a href="sporocila_prva.php"><span></span>Sporočila<b>
+                            <?php if(isset($_SESSION['user_id'])){
+                            $result=mysqli_query($link, "select * from messages where (tuser_id=".$_SESSION['user_id'].") and (seen=0)"); 
+                            $row = mysqli_num_rows($result);
+                            if($row!=0)
+                            echo "&nbsp;$row";
+                            }
+                            ?>
+                                </b></a></li>
                         <?php
                         if (isset($_SESSION['user_id'])) {
                             ?>
