@@ -62,7 +62,6 @@ include_once 'database.php';
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
                         <li><a href="skills.php"><span></span>Veščine</a></li>
-                        <li><a href="blog.html"><span></span>Blog</a></li>
                         <li><a href="sporocila_prva.php"><span></span>Sporočila<b>
                             <?php if(isset($_SESSION['user_id'])){
                             $result=mysqli_query($link, "select * from messages where (tuser_id=".$_SESSION['user_id'].") and (seen=0)"); 
@@ -72,7 +71,7 @@ include_once 'database.php';
                             }
                             ?>
                                 </b></a></li>
-                        <li><a href="projects.php" class="current"><span></span>Projekti</a></li>
+                        <li><a href="projects.php"><span></span>Projekti</a></li>
                         <?php
                         if (isset($_SESSION['user_id'])) {
                             ?>
