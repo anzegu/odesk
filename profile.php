@@ -10,35 +10,43 @@
     $user = mysqli_fetch_array($result);
 ?>
 
-<form action="profile_update.php" method="POST" enctype="multipart/form-data">
-    Ime: <input type="text" name="first_name" value="<?php echo $user['first_name']; ?>" /><br />
-    Priimek: <input type="text" name="last_name" value="<?php echo $user['last_name']; ?>" /><br />
-    Država: <select name="country_id">        
-        <?php 
-            $query = "SELECT * FROM countries";
-            $result = mysqli_query($link, $query);
-            while ($row = mysqli_fetch_array($result)) {
-                if ($row['id'] == $user['country_id']) {
-                    echo '<option value="'.$row['id'].'" selected="selected">'.$row['title'].'</option>';
+    <form action="profile_update.php" method="POST" enctype="multipart/form-data">
+<table>    
+        <tr><td>Ime: </td><td><input type="text" name="first_name" value="<?php echo $user['first_name']; ?>" /></td></tr><br />
+        <tr><td>Priimek: </td><td><input type="text" name="last_name" value="<?php echo $user['last_name']; ?>" /></td></tr><br />
+        <tr><td>Država: </td><td><select name="country_id">        
+            <?php 
+                $query = "SELECT * FROM countries";
+                $result = mysqli_query($link, $query);
+                while ($row = mysqli_fetch_array($result)) {
+                    if ($row['id'] == $user['country_id']) {
+                        echo '<option value="'.$row['id'].'" selected="selected">'.$row['title'].'</option>';
+                    }
+                    else {
+                        echo '<option value="'.$row['id'].'">'.$row['title'].'</option>';
+                    }
+                    
                 }
-                else {
-                    echo '<option value="'.$row['id'].'">'.$row['title'].'</option>';
-                }
-                
-            }
-        ?>
-    </select><br />
-    <?php
-        if (!empty($user['avatar'])) {
-            echo '<img src="'.$user['avatar'].'" alt="Avatar" height="100px" />';
-        }
-        else {
-            echo '<img src="slike/no.jpg" alt="Ni slike" height="100px" />';
-        }
-    ?>
-    <input type="file" name="fileToUpload" /><br />
-    <input type="submit" name="submit" value="Posodobi" />
-</form>
+            ?>
+        </select></td></tr><br />
+        <tr>
+            <td>
+                <?php
+                    if (!empty($user['avatar'])) {
+                        echo '<img src="'.$user['avatar'].'" alt="Avatar" height="100px" />';
+                    }
+                    else {
+                        echo '<img src="slike/no.jpg" alt="Ni slike" height="100px" />';
+                    }
+                ?>
+            </td>
+        </tr>
+</table>
+        <table>
+        <tr><td><input type="file" name="fileToUpload" /></td></tr><br />
+        <tr><td><input type="submit" name="submit" value="Posodobi" /></td></tr>
+        </table>
+    </form>
 <br />
 <hr />
 <h2>Opis</h2>
@@ -79,12 +87,15 @@
     <input type="submit" value="Posodobi" />
 </form>
     <h2>Dokumenti</h2>
+    
+<table>
     <form action="document_insert.php" method="POST" enctype="multipart/form-data">
-        Naslov: <input type="text" name="title" /><br />
-        Opis: <textarea name="description" cols="15" rows="5"></textarea><br />
-        Datoteka: <input type="file" name="fileToUpload" /><br />
-        <input type="submit" name="submit" value="Naloži" />
+        <tr><td>Naslov: </td><td><input type="text" name="title" /></td></tr><br />
+        <tr><td>Opis: </td><td><textarea name="description" cols="15" rows="5"></textarea></td></tr><br />
+        <tr><td>Datoteka: </td><td><input type="file" name="fileToUpload" /></td></tr><br />
+        <tr><td></td><td><input type="submit" name="submit" value="Naloži" /></td></tr>
     </form>
+</table>
 </div>
 <?php
 include_once 'footer.php';

@@ -62,6 +62,7 @@ include_once 'database.php';
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
                         <li><a href="skills.php"><span></span>Veščine</a></li>
+<<<<<<< HEAD
                         <li><a href="blog.html"><span></span>Blog</a></li>
                         <li><a href="sporocila_prva.php"><span></span>Sporočila<b>
                             <?php if(isset($_SESSION['user_id'])){
@@ -72,6 +73,9 @@ include_once 'database.php';
                             }
                             ?>
                                 </b></a></li>
+=======
+                        <li><a href="projects.php" class="current"><span></span>Projekti</a></li>
+>>>>>>> 76eac43b348aaccf0d89de51968659bf1ba39677
                         <?php
                         if (isset($_SESSION['user_id'])) {
                             ?>
