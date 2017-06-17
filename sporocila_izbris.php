@@ -17,6 +17,5 @@
         echo 'Nisi prijavljen!';
     }
      
-    include 'footer.php';
 header("Location: sporocila_prva.php"); die();
 ?>
