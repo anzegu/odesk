@@ -27,8 +27,10 @@ $query = "select m.id as 'id', u.first_name, u.last_name, m.tuser_id, m.subject,
             if($row!=0){
                 while($rows = mysqli_fetch_assoc($result)){
                 echo '<tr><td>Datoteka:</td><td><a href="'.$file = $rows['file'].'">Link</a></td></tr>';
+                echo '<tr><td colspan="2"><a href="sporocila_izbris.php?mid='.$id.'&fid='.$fid.'">Izbriši</a>';
                 }
             }
+            echo '<tr><td colspan="2"><a href="sporocila_izbris.php?mid='.$id.'">Izbriši</a>';
             echo '<tr><td colspan="2"><a href="sporocila_s.php?email='.$email.'&mid='.$id.'&subject=RE:'.$subject.'">Odgovori</a>';
             echo '</td></tr></table>';
             
