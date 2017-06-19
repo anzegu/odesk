@@ -26,5 +26,5 @@ $deadline_cena = $_POST['deadline_cena'];
         echo $result;
         
       
-        //header("Location: projects.php");
+        header("Location: projects.php");
 ?>

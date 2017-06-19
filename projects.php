@@ -13,10 +13,12 @@ include_once 'database.php';
         <th>Okvirna Cena</th>
         <th>Zadnja cena</th>
         <th>Oddaj ponudbo</th>
+        <th>Uredi ali izbriši</th>
         <th>Oddaj prijavo za projetk</th>
     </tr>
     <?php 
-        $query = "SELECT *, p.id AS project_id 
+            
+        $query = "SELECT *,p.id AS project_id 
                   FROM projects p INNER JOIN users u
                   ON u.id = p.user_id";
         $result = mysqli_query($link, $query);
@@ -37,9 +39,10 @@ include_once 'database.php';
                 echo '<a href="project_edit.php?id='.$row['project_id'].'">Uredi</a> ';
                 echo '<a href="project_delete.php?id='.$row['project_id'].'">Izbriši</a>';
             }
+            echo '<td> <a href = sporocila_s.php> Pošlji sporočilo</a>';
 
             echo "</td>";
-            echo '</tr>';
+            echo "</tr>";
         }
     ?>
 </table>
