@@ -10,7 +10,9 @@ include_once 'database.php';
         <th>Št.</th>
         <th>Ime</th>
         <th>Lastnik</th>
-        <th>Akcije</th>
+        <th>Okvirna Cena</th>
+        <th>Zadnja cena</th>
+        <th>Oddaj prijavo za projetk</th>
     </tr>
     <?php 
         $query = "SELECT *, p.id AS project_id 
@@ -24,13 +26,16 @@ include_once 'database.php';
             echo "<tr>";
             echo "<td>$st</td>";
             echo "<td>".$row['title']."</td>";
-            echo "<td>".$row['first_name'].' '
-                         .$row['last_name']."</td>";
+            echo "<td>".$row['first_name']. "</td>";
+            echo "<td>".$row['okvirna_cena']."€"."</td>";
+            echo "<td>".$row['deadline_cena']."€"."</td>";
+                         //.$row['last_name']."</td>";
             echo "<td>";
             if ($_SESSION['user_id'] == $row['user_id']) {
                 echo '<a href="project_edit.php?id='.$row['project_id'].'">Uredi</a> ';
                 echo '<a href="project_delete.php?id='.$row['project_id'].'">Izbriši</a>';
             }
+
             echo "</td>";
             echo '</tr>';
         }

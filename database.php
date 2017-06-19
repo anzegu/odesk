@@ -1,13 +1,11 @@
 <?php
-    $username = 'root';
-    $password = NULL;
-    $database = 'odesk';
-    $server = 'localhost';
-    //povezava na podatkovno bazo
-    $link = mysqli_connect($server, $username, $password, $database);
+    $db_user = 'root';
+    $db_pass = '';
+    $db_host = 'localhost';
+    $db_name = 'zakljucna';
     
-    //za pravilno delanje šumnikov
-    mysqli_query($link,"SET NAMES 'utf8'"); 
+    $link = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+    mysqli_query($link,"SET NAMES 'utf8");
     
     //soljenje gesla
     $salt = '93487gh59874ldsk439875';

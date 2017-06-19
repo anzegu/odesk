@@ -128,19 +128,19 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 }
 
 #tooplate_wrapper {
-	width: 980px;
+	width: 1200px;
 	margin: 0 auto;
 	padding: 0 5px;
 }
 
 #tooplate_header {
-	width: 980px;
+	width: 1200px;
 	height: 815px;
 	background: url(../images/tooplate_header.png) no-repeat top center;
 }
 
 #tooplate_header_sp {
-	width: 980px;
+	width: 1200px;
 	height: 174px;
 	margin-bottom: 40px;
 	background: url(../images/tooplate_header.png) no-repeat top center;
@@ -150,7 +150,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 
 #tooplate_menu {
 	clear: both;
-	width: 940px;
+	width: 1200px;
 	height: 40px;
 }
 
