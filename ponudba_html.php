@@ -4,6 +4,7 @@ include_once 'database.php';
 include_once 'header.php';
 ?>
 <?php
+
 $_SESSION['project_id'] = $_GET['pid'];
 ?>
     <body>
