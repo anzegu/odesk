@@ -76,6 +76,7 @@ include_once 'database.php';
                         if (isset($_SESSION['user_id'])) {
                             ?>
                         <li><a href="dodaj_projekt_web.php"><span></span>Dodaj projekt</a></li>
+                        <li><a href=""><span></span>Ponudbe</a></li>
                             <li><a href="logout.php"><span></span>Odjava</a></li>
                             <li><a href="profile.php"><span></span>
                                     <?php if(isset($_SESSION['first_name'])){

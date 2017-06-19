@@ -10,7 +10,6 @@ include_once 'database.php';
     <body>
 
     <body>
-        <h1>Dodajanje prevozov</h1>
         <form action="dodaj_projekt.php" method="post">
             Vpišite naslov projekta <br>
                 <input type="text" name="title" /> </br>

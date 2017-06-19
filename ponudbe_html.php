@@ -12,8 +12,9 @@ include_once 'database.php';
         <th>Lastnik</th>
         <th>Okvirna Cena</th>
         <th>Zadnja cena</th>
-        <th>Oddaj ponudbo</th>
-        <th>Oddaj prijavo za projetk</th>
+        <th>Ponujena cena</th>
+        <th>Opis</th>
+        <th>Uporabnik</th>
     </tr>
     <?php 
         $query = "SELECT *, p.id AS project_id 
@@ -30,7 +31,10 @@ include_once 'database.php';
             echo "<td>".$row['first_name']. "</td>";
             echo "<td>".$row['okvirna_cena']."€"."</td>";
             echo "<td>".$row['deadline_cena']."€"."</td>";
-            echo '<td> <a href = ponudba_html.php?id='.$row['id'].'onclick="return confirm (\'Ali ste prepričani?\')> Uredi </a> </td>';
+            echo "<td>".$row['cena']. "</td>";
+            echo "<td>".$row['opis']. "</td>";
+            echo "<td>".$row['']. "</td>";
+            
                          //.$row['last_name']."</td>";
             echo "<td>";
             if ($_SESSION['user_id'] == $row['user_id']) {
