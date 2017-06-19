@@ -1,14 +1,8 @@
 <?php
 include_once 'session.php';
 include_once 'database.php';
+include_once 'header.php';
 ?>
-
-    <?php
-    include_once 'header.php';
-?>
-
-    <body>
-
     <body>
         <form action="ponudba.php" method="post">
              
