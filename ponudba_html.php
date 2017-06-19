@@ -14,10 +14,6 @@ include_once 'database.php';
              
             Cena: <input type="text" name="cena" /> </br>
             Opis <input type="text" name="opis" /> </br>
-            
-
-                 </select>
-
               
                                  <input  type="submit" value="Shrani" >
              
