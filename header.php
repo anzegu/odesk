@@ -77,7 +77,8 @@ include_once 'database.php';
                             ?>
                             <li><a href="logout.php"><span></span>Odjava</a></li>
                             <li><a href="profile.php"><span></span>
-                                    <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
+                                    <?php if(isset($_SESSION['first_name'])){
+                                    echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; }?>
                                 </a></li>
                             <?php
                         } else {
