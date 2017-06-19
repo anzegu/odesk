@@ -32,7 +32,7 @@ include_once 'database.php';
             echo "<td>".$row['first_name']. "</td>";
             echo "<td>".$row['okvirna_cena']."€"."</td>";
             echo "<td>".$row['deadline_cena']."€"."</td>";
-            echo '<td> <a href = ponudba_html.php?id='.$row['id'].'onclick="return confirm (\'Ali ste prepričani?\')> Pošlji </a> </td>';
+            echo '<td> <a href = ponudba_html.php?id='.$row['id'].'&pid='.$row['project_id'].'onclick="return confirm (\'Ali ste prepričani?\')> Pošlji </a> </td>';
                          //.$row['last_name']."</td>";
             echo "<td>";
             if ($_SESSION['user_id'] == $row['user_id']) {
