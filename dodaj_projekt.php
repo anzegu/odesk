@@ -13,9 +13,8 @@ $deadline_cena = $_POST['deadline_cena'];
 
 
 
-    $query =  sprintf("INSERT INTO  projects (user_id, title, end_date, description, okvirna_cena, deadline_cena) VALUES ($user,'%s','%s','%s','%s','%s','%s')",
+    $query =  sprintf("INSERT INTO  projects (user_id, title, end_date, description, okvirna_cena, deadline_cena)"."VALUES ($user,'%s','%s','%s','%s','%s')",
         mysqli_real_escape_string($link, $title),
-   
         mysqli_real_escape_string($link, $end_date),
         mysqli_real_escape_string($link, $description),
         mysqli_real_escape_string($link, $okvirna_cena),
