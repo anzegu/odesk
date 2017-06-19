@@ -17,8 +17,8 @@ include_once 'database.php';
         <th>Uporabnik</th>
     </tr>
     <?php 
-        $query = "SELECT *, p.id AS project_id 
-                  FROM projects p INNER JOIN users u
+        $query = "SELECT *, p.id AS project_id, po.user_id 
+                  FROM projects p INNER JOIN users u INNER JOIN Ponudbe po ON po.user_id=po.id 
                   ON u.id = p.user_id";
         $result = mysqli_query($link, $query);
         //izpisal bom vse projekte
@@ -33,7 +33,7 @@ include_once 'database.php';
             echo "<td>".$row['deadline_cena']."€"."</td>";
             echo "<td>".$row['cena']. "</td>";
             echo "<td>".$row['opis']. "</td>";
-            echo "<td>".$row['']. "</td>";
+            echo "<td>".$row['user_id']. "</td>";
             
                          //.$row['last_name']."</td>";
             echo "<td>";
