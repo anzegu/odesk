@@ -20,6 +20,7 @@ include_once 'database.php';
 
               
                                  <input  type="submit" value="Shrani" >
+                                 <input type="reset" value="Prekliči">
              
         </form>
     </body>
