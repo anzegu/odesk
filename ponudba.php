@@ -9,7 +9,7 @@ $opis = $_POST['opis'];
 
 
 
-    $query =  sprintf("INSERT INTO  Ponudbe (user_id, project_id, cena, opis) VALUES ($user,'%s',%s','%s')",
+    $query =  sprintf("INSERT INTO  Ponudbe (user_id, project_id, cena, opis) VALUES ($user,'%s','%s')",
         
         mysqli_real_escape_string($link, $cena),
         mysqli_real_escape_string($link, $opis));
