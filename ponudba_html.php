@@ -3,6 +3,9 @@ include_once 'session.php';
 include_once 'database.php';
 include_once 'header.php';
 ?>
+<?php
+$project_id = $_GET['pid'];
+?>
     <body>
         <form action="ponudba.php" method="post">
              
