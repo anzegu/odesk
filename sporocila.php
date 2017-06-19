@@ -21,7 +21,7 @@ $query = "select m.id AS 'id', u.first_name, u.last_name, m.tuser_id, m.subject,
             while($rows = mysqli_fetch_assoc($result)){
                 $id=$rows['id'];
                 echo '<tr>';
-                echo '<td>'.$tuser = $rows['first_name'].'&nbsp;'.$prii= $rows['last_name'].'</td>';
+                echo '<td>'.'<a href="view_profile.php?id='.$_SESSION['user_id'].'">'.$tuser = $rows['first_name'].'&nbsp;'.$prii= $rows['last_name'].'</a>'.'</td>';
                 echo "<td><a href='sporocila_pr2.php?id=$id'>".$subject = $rows['subject']."</a></td>";
                 echo '<td>'.$date = $rows['date'].'</td></tr>';
             } 

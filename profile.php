@@ -96,6 +96,19 @@
         <tr><td></td><td><input type="submit" name="submit" value="Naloži" /></td></tr>
     </form>
 </table>
+<br />
+<hr />
+    <?php 
+        if($user['admin'] == 1){
+    ?>
+        <h2>Dodaj novo Veščino</h2>
+        <form action="skill_insert.php" method="POST">
+            Ime: <input type="text" name="title"  /><br />
+            Opis: <textarea name="description" cols="15" rows="5" placeholder="Vnesi pobrobni opis veščine"></textarea><br />
+            <input type="submit" value="Vnesi" name="admin_skill_add" /> 
+            <input type="reset" value="Prekliči" />
+        </form>
+    <?php } ?>
 </div>
 <?php
 include_once 'footer.php';

@@ -195,7 +195,7 @@ CREATE TABLE `skills_users` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `skill_id` int(11) NOT NULL,
-  `rank` int(11) NOT NULL
+  `rank` int(11) NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
@@ -238,8 +238,8 @@ CREATE TABLE `users` (
   `date_birth` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `description` text COLLATE utf8_slovenian_ci,
   `avatar` varchar(255) COLLATE utf8_slovenian_ci DEFAULT NULL,
-  `hashcode` varchar(100) COLLATE utf8_slovenian_ci NOT NULL,
-  `active` int(11) NOT NULL,
+  `hashcode` varchar(100) COLLATE utf8_slovenian_ci NULL,
+  `active` int(11) NULL,
   `admin` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 

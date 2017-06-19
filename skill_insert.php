@@ -12,5 +12,9 @@
     //vnos podatkov v bazo
     mysqli_query($link, $query);    
     //preusmeritev
-    header("Location: skill_add.php");
+    if (isset($_POST['admin_skill_add'])){
+        header("Location: profile.php");
+    }else{
+        header("Location: skill_add.php");
+    }
 ?>
