@@ -3,6 +3,7 @@ include_once 'session.php';
 include_once 'database.php';
 ?>
 <?php
+$project_id = $_SESSION['project_id'];
 $user=$_SESSION['user_id'];
 $cena = $_POST['cena'];
 $opis = $_POST['opis'];
