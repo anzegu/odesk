@@ -1,23 +1,13 @@
 <?php
 include_once 'session.php';
 include_once 'database.php';
+include_once 'header.php';
 ?>
-
-    <?php
-    include_once 'header.php';
-?>
-
-    <body>
-
     <body>
         <form action="ponudba.php" method="post">
              
             Cena: <input type="text" name="cena" /> </br>
             Opis <input type="text" name="opis" /> </br>
-            
-
-                 </select>
-
               
                                  <input  type="submit" value="Shrani" >
                                  <input type="reset" value="Prekliči">

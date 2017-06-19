@@ -1,32 +1,22 @@
 <?php
 include_once 'session.php';
 include_once 'database.php';
+include_once 'header.php';
 ?>
-
-    <?php
-    include_once 'header.php';
-?>
-
     <body>
-
-    <body>
+    <table>
         <form action="dodaj_projekt.php" method="post">
-            Vpišite naslov projekta <br>
-                <input type="text" name="title" /> </br>
-            <input type="datetime-local" name="end_date"><br>
-            Opišite projekt <input type="text" name="description" /> </br>
-            Okvirna cena: <input type="text" name="okvirna_cena" /> </br>
-            Deadline cena: <input type="text" name="deadline_cena" /> </br>
-            
-
-                 </select>
-
-              
-                                 <input  type="submit" value="Shrani" >
-             
+            <tr><td>Vpišite naslov projekta :</td>
+                <td><input type="text" name="title"  size="26" /> </td>
+            </tr>
+            <tr><td>Okvirna cena: </td><td><input type="text" name="okvirna_cena" size="26"/> </td></tr>
+            <tr><td>Deadline cena: </td><td><input type="text" name="deadline_cena" size="26"/></td></tr>
+            <tr><td>Datum:</td><td><input type="datetime-local" name="end_date" ></td></tr>
+            <tr><td>Opišite projekt: </td><td><textarea name="description" cols="32" rows="5"></textarea></td></tr>
+                                 <tr><td><input  type="submit" value="Shrani" size="26"></td></tr>
         </form>
+    </table>
     </body>
-    <?php
+<?php
     include_once 'footer.php';
 ?>
-</html>
