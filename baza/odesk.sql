@@ -218,6 +218,12 @@ INSERT INTO `skills_users` (`id`, `user_id`, `skill_id`, `rank`) VALUES
 
 -- --------------------------------------------------------
 
+CREATE TABLE `score` (
+  `id` int(11) NOT NULL,
+  `ocena` int(11),
+  `user_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
 --
 -- Struktura tabele `users`
 --
@@ -234,6 +240,7 @@ CREATE TABLE `users` (
   `avatar` varchar(255) COLLATE utf8_slovenian_ci DEFAULT NULL,
   `hashcode` varchar(100) COLLATE utf8_slovenian_ci NOT NULL,
   `active` int(11) NOT NULL
+  `admin` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
@@ -321,6 +328,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT zavrženih tabel
 --
 
+ALTER TABLE `score`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+
 --
 -- AUTO_INCREMENT tabele `countries`
 --
@@ -366,6 +378,9 @@ ALTER TABLE `skills_users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+ALTER TABLE `score`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12; 
 --
 -- Omejitve tabel za povzetek stanja
 --
