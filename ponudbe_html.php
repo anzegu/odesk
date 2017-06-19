@@ -27,12 +27,12 @@ include_once 'database.php';
             echo "<tr>";
             echo "<td>$st</td>";
             echo "<td>".$row['title']."</td>";
-            echo "<td>".$row['first_name'].$row['last_name'] ."</td>";
+            echo "<td>".$row['first_name'].' '.$row['last_name'] ."</td>";
             echo "<td>".$row['okvirna_cena']."€"."</td>";
             echo "<td>".$row['deadline_cena']."€"."</td>";
             echo "<td>".$row['cena']."€"."</td>";
             echo "<td>".$row['opis']. "</td>";
-            echo "<td>".$row['ime'].$row['priimek']. "</td>";
+            echo "<td>".$row['ime'].' '.$row['priimek']. "</td>";
             
                          //.$row['last_name']."</td>";
 
