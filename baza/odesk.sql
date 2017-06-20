@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Gostitelj: localhost
--- Čas nastanka: 19. jun 2017 ob 22.21
--- Različica strežnika: 10.1.19-MariaDB
--- Različica PHP: 5.6.28
+-- Gostitelj: 127.0.0.1
+-- Čas nastanka: 20. jun 2017 ob 16.04
+-- Različica strežnika: 10.1.21-MariaDB
+-- Različica PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Zbirka podatkov: `zakljucna`
+-- Zbirka podatkov: `odesk`
 --
 
 -- --------------------------------------------------------
@@ -118,10 +118,10 @@ INSERT INTO `messages` (`id`, `tuser_id`, `fuser_id`, `subject`, `content`, `see
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `Ponudbe`
+-- Struktura tabele `ponudbe`
 --
 
-CREATE TABLE `Ponudbe` (
+CREATE TABLE `ponudbe` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
@@ -130,10 +130,10 @@ CREATE TABLE `Ponudbe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_slovenian_ci;
 
 --
--- Odloži podatke za tabelo `Ponudbe`
+-- Odloži podatke za tabelo `ponudbe`
 --
 
-INSERT INTO `Ponudbe` (`id`, `user_id`, `project_id`, `cena`, `opis`) VALUES
+INSERT INTO `ponudbe` (`id`, `user_id`, `project_id`, `cena`, `opis`) VALUES
 (1, 5, 0, 200, '0'),
 (2, 5, 0, 430, 'Testiramo text'),
 (3, 5, 0, 500, 'Test'),
@@ -162,6 +162,18 @@ CREATE TABLE `projects` (
 
 INSERT INTO `projects` (`id`, `user_id`, `title`, `start_date`, `end_date`, `description`, `okvirna_cena`, `deadline_cena`) VALUES
 (1, 2, 'Zakljucna naloga', '2017-06-19 16:27:43', '2017-06-20 07:00:00', 'Naredite po navodilih.', 12, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `score`
+--
+
+CREATE TABLE `score` (
+  `id` int(11) NOT NULL,
+  `ocena` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 -- --------------------------------------------------------
 
@@ -195,7 +207,7 @@ CREATE TABLE `skills_users` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `skill_id` int(11) NOT NULL,
-  `rank` int(11) NULL
+  `rank` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
@@ -218,12 +230,6 @@ INSERT INTO `skills_users` (`id`, `user_id`, `skill_id`, `rank`) VALUES
 
 -- --------------------------------------------------------
 
-CREATE TABLE `score` (
-  `id` int(11) NOT NULL,
-  `ocena` int(11),
-  `user_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
-
 --
 -- Struktura tabele `users`
 --
@@ -238,21 +244,21 @@ CREATE TABLE `users` (
   `date_birth` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `description` text COLLATE utf8_slovenian_ci,
   `avatar` varchar(255) COLLATE utf8_slovenian_ci DEFAULT NULL,
-  `hashcode` varchar(100) COLLATE utf8_slovenian_ci NULL,
-  `active` int(11) NULL,
-  `admin` int(11) DEFAULT NULL
+  `hashcode` varchar(100) COLLATE utf8_slovenian_ci DEFAULT NULL,
+  `active` int(11) DEFAULT NULL,
+  `admin` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
 -- Odloži podatke za tabelo `users`
 --
 
-INSERT INTO `users` (`id`, `country_id`, `first_name`, `last_name`, `email`, `pass`, `date_birth`, `description`, `avatar`, `hashcode`, `active`) VALUES
-(1, 1, 'Islam', 'Mušić', 'islam.music@gmail.com', '7f667781432ac3c11c9c281c4ecb1a11690b729f', '2015-02-12 17:43:36', NULL, NULL, '', 0),
-(2, 10, 'Islam', 'Mušić', 'islam@scv.si', 'c27d05b6a544f7329442c4580963ba85abb93874', '2015-02-26 17:48:21', 'Tole ', 'slike/20150226063119602Penguins.jpg', '', 0),
-(3, 1, 'Anže', 'GU', 'npr.pat@gmail.com', '63c09eb198138b42983c0e92571f75fa2c89cec4', '2017-06-08 10:29:08', NULL, NULL, '', 0),
-(4, 1, 'Gal', 'G', 'gg@gmail.com', '63c09eb198138b42983c0e92571f75fa2c89cec4', '2017-06-15 10:06:40', NULL, NULL, '', 0),
-(5, 1, 'Jakob', 'Mali', 'jjakka222@gmail.com', 'acce6991ec58a8ed0d2e1b12cb8ae9c4c3f935d1', '2017-06-19 16:47:06', NULL, NULL, '', 0);
+INSERT INTO `users` (`id`, `country_id`, `first_name`, `last_name`, `email`, `pass`, `date_birth`, `description`, `avatar`, `hashcode`, `active`, `admin`) VALUES
+(1, 1, 'Islam', 'Mušić', 'islam.music@gmail.com', '7f667781432ac3c11c9c281c4ecb1a11690b729f', '2015-02-12 17:43:36', NULL, NULL, '', 0, 0),
+(2, 10, 'Islam', 'Mušić', 'islam@scv.si', 'c27d05b6a544f7329442c4580963ba85abb93874', '2015-02-26 17:48:21', 'Tole ', 'slike/20150226063119602Penguins.jpg', '', 0, 0),
+(3, 1, 'Anže', 'GU', 'npr.pat@gmail.com', '63c09eb198138b42983c0e92571f75fa2c89cec4', '2017-06-08 10:29:08', NULL, NULL, '', 0, 0),
+(4, 1, 'Gal', 'G', 'gg@gmail.com', '63c09eb198138b42983c0e92571f75fa2c89cec4', '2017-06-15 10:06:40', NULL, NULL, '', 0, 0),
+(5, 1, 'Jakob', 'Mali', 'jjakka222@gmail.com', 'acce6991ec58a8ed0d2e1b12cb8ae9c4c3f935d1', '2017-06-19 16:47:06', NULL, NULL, '', 0, 0);
 
 --
 -- Indeksi zavrženih tabel
@@ -288,9 +294,9 @@ ALTER TABLE `messages`
   ADD KEY `tuser_id_2` (`tuser_id`);
 
 --
--- Indeksi tabele `Ponudbe`
+-- Indeksi tabele `ponudbe`
 --
-ALTER TABLE `Ponudbe`
+ALTER TABLE `ponudbe`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `Ponudba_id` (`project_id`);
@@ -299,6 +305,13 @@ ALTER TABLE `Ponudbe`
 -- Indeksi tabele `projects`
 --
 ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indeksi tabele `score`
+--
+ALTER TABLE `score`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
@@ -328,11 +341,6 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT zavrženih tabel
 --
 
-ALTER TABLE `score`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
-
-
 --
 -- AUTO_INCREMENT tabele `countries`
 --
@@ -354,15 +362,20 @@ ALTER TABLE `files`
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
--- AUTO_INCREMENT tabele `Ponudbe`
+-- AUTO_INCREMENT tabele `ponudbe`
 --
-ALTER TABLE `Ponudbe`
+ALTER TABLE `ponudbe`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT tabele `projects`
 --
 ALTER TABLE `projects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT tabele `score`
+--
+ALTER TABLE `score`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT tabele `skills`
 --
@@ -378,9 +391,6 @@ ALTER TABLE `skills_users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
-ALTER TABLE `score`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12; 
 --
 -- Omejitve tabel za povzetek stanja
 --
