@@ -19,7 +19,7 @@ include_once 'database.php';
     </tr>
     <?php 
     $user=$_SESSION['user_id'];
-        $query = "SELECT p.id,p.title, us.first_name,us.last_name,p.okvirna_cena,p.deadline_cena,pr.cena,pr.opis,users1.first_name as ime,users1.last_name as priimek FROM projects p INNER JOIN users us ON us.id=p.user_id INNER JOIN Ponudbe pr ON pr.project_id=p.id INNER JOIN users as users1 ON users1.id=pr.user_id WHERE us.id=$user;";
+        $query = "SELECT p.id,p.title, us.id, us.first_name,us.last_name,p.okvirna_cena,p.deadline_cena,pr.cena,pr.opis,users1.first_name as ime,users1.last_name as priimek FROM projects p INNER JOIN users us ON us.id=p.user_id INNER JOIN Ponudbe pr ON pr.project_id=p.id INNER JOIN users as users1 ON users1.id=pr.user_id WHERE us.id=$user;";
         $result = mysqli_query($link, $query);
         //izpisal bom vse projekte
         $st = 0;
@@ -33,7 +33,7 @@ include_once 'database.php';
             echo "<td>".$row['deadline_cena']."€"."</td>";
             echo "<td>".$row['cena']."€"."</td>";
             echo "<td>".$row['opis']. "</td>";
-            echo "<td>".$row['ime'].' '.$row['priimek']. "</td>";
+            echo "<td>".'<a href="view_profile.php?id='.$row['id'].'">'.$row['ime'].' '.$row['priimek'].'</a>'."</td>";
             echo '<td> <a href = sporocila_s.php> Pošlji sporočilo</a>';
             echo '</tr>';
         } 
