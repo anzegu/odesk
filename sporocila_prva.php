@@ -27,7 +27,7 @@ $query = "select m.id AS 'id', u.first_name, u.last_name, m.tuser_id, m.subject,
             } 
             echo '</table>';
         }
-        else {echo '<tr><td colspan="3">Niste prejeli sporočila!</td></tr></table>';}
+        else {echo '<tr><td colspan="3">Niste prejeli sporočila!</td></tr></table><br>';}
         
       
     }

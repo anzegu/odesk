@@ -15,7 +15,7 @@ include_once 'header.php';
             <tr><td>Opišite projekt: </td><td><textarea name="description" cols="32" rows="5"></textarea></td></tr>
                                  <tr><td><input  type="submit" value="Shrani" size="26"></td></tr>
         </form>
-    </table>
+    </table><br>
     </body>
 <?php
     include_once 'footer.php';

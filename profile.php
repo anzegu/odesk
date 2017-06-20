@@ -4,7 +4,7 @@
     
     //shrani si id trenutno prijavljenega uporabnika
     $user_id = $_SESSION['user_id'];
-    
+    $admin = $_SESSION['admin'];
     $query = "SELECT * FROM users WHERE id =$user_id";
     $result = mysqli_query($link, $query);
     $user = mysqli_fetch_array($result);
@@ -99,7 +99,7 @@
 <br />
 <hr />
     <?php 
-        if($user['admin'] == 1){
+        if($admin == 1){
     ?>
         <h2>Dodaj novo Veščino</h2>
         <form action="skill_insert.php" method="POST">
