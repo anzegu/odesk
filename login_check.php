@@ -27,7 +27,7 @@
         $_SESSION['first_name'] = $user['first_name'];
         $_SESSION['last_name'] = $user['last_name'];
         $_SESSION['email'] = $user["email"];
-        
+        $_SESSION['admin'] = $user['admin'];
         //vse je ok, preusmeritev na index
         header("Location: index.php");
         die();
