@@ -40,23 +40,21 @@
 <br />
 <hr />
 <h2>Ocena</h2>
+<?php
+
+echo '<form action="ocena_insert.php?user_id='.$user_id.'" method="post">';
+echo '<input type="number" name="ocena" min="1" max="5">';
+echo '<input type="submit" value="oceni">';
+echo '</form>';
+?>
+<br>
     <?php 
-        $query = "SELECT * FROM score WHERE user_id = ".$user_id."";
+        $query = "SELECT Avg(ocena) AS AverageOcena FROM score WHERE user_id = ".$user_id."";
         $result = mysqli_query($link, $query);
-        $i=0;
-        $vs;
-        //se
-        while($row = mysqli_fetch_array($result)){
-            $vs += $row['ocena'];
-            $i++;
+        while ($row = mysqli_fetch_array($result)) {
+            echo "Ocena: "."<td>".$row['AverageOcena']."</td>";
         }
-        //povprečje = vsota / št. ocen
-        if($i == 0){
-            echo 'Uporabnik brez ocen';
-        }else {
-            $povp = $vs/$i;
-            echo $povp;
-        }
+
     ?>
 <br />
 
