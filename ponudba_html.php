@@ -11,8 +11,10 @@ $_SESSION['project_id'] = $_GET['pid'];
         <table>
         <form action="ponudba.php" method="post">
              
-            <tr><td>Cena:</td> <td><input type="text" name="cena" /> </br></td></tr>
-        <tr><td>Opis:</td><td> <input type="text" name="opis" /> </br></td></tr>
+            <tr><td>Cena:</td> <td><input type="text" name="cena" required/> </br></td></tr>
+        <tr><td>Opis:</td><td> <textarea form_id="ponudba.php" name="opis" required style="width: 600px; height: 200px;"></textarea> </br></td></tr>
+         <br>
+
               
                                 <tr><td> <input  type="submit" value="Shrani" ></td>
                               <td>   <input type="reset" value="Prekliči"></td></tr>
