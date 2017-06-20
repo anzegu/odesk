@@ -43,7 +43,7 @@
     <?php 
         $query = "SELECT * FROM score WHERE user_id = ".$user_id."";
         $result = mysqli_query($link, $query);
-        $i;
+        $i=0;
         $vs;
         //se
         while($row = mysqli_fetch_array($result)){
