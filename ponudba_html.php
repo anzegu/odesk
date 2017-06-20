@@ -16,7 +16,7 @@ $_SESSION['project_id'] = $_GET['pid'];
          <br>
 
               
-                                <tr><td> <input  type="submit" value="Shrani" ></td>
+                                <tr><td> <input  type="submit" value="Pošlji" ></td>
                               <td>   <input type="reset" value="Prekliči"></td></tr>
              
         </form>
