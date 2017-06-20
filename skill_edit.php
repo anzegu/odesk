@@ -15,13 +15,14 @@
 ?>
 
 <h1>Urejanje veščine</h1>
+<table>
 <form action="skill_update.php" method="POST">
     <input type="hidden" name="id" value="<?php echo $id; ?>" />
-    Ime: <input type="text" name="title" value="<?php echo $skill['title']; ?>" /><br />
-    Opis: <textarea name="description" cols="15" rows="5" placeholder="Vnesi pobrobni opis veščine"><?php echo $skill['description']; ?></textarea><br />
-    <input type="submit" value="Vnesi" />
+    <tr><td>  Ime:</td> <td><input type="text" name="title" value="<?php echo $skill['title']; ?>" /><br /></td></tr>
+    <tr><td> Opis:</td><td> <textarea name="description" cols="15" rows="5" placeholder="Vnesi pobrobni opis veščine"><?php echo $skill['description']; ?></textarea><br /></td></tr>
+    <tr><td>  <input type="submit" value="Vnesi" /></tr></td>
 </form>
-
+</table>
 
 <?php
     include_once 'footer.php';
