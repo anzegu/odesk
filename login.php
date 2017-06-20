@@ -10,7 +10,7 @@
 	    <tr><td><input type="submit" value="Prijava" /></td>
 	    <td><input type="reset" value="Prekliči" /></td></tr>
 	</form>
-</table>
+</table><br>
 <?php
     include_once 'footer.php';
 ?>

@@ -26,7 +26,7 @@ include_once 'database.php';
         </select></td></tr><br />
         <tr><td><input type="submit" value="Registriraj" /></td></tr>
     </form>
-</table>
+</table><br>
 
 <?php
 include_once 'footer.php';
