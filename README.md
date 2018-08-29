@@ -1,4 +1,7 @@
-# odesk
+<b>Description</b>
+
+------------------------------------------------
+
 An app for advertising projects (school project)
 
 Users have to create an accout in order to access the site. Once created they can edit their profile 
@@ -15,3 +18,5 @@ When a user has a new message, a notification is displayed (the number of new me
 when the message is seen.
 
 An admin can add/delte/edit skills, projects and countrys.
+
+------------------------------------------------
